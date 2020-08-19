@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5307" started-at="2020-08-18T14:54:26Z" finished-at="2020-08-18T14:54:32Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5307" started-at="2020-08-18T14:54:26Z" finished-at="2020-08-18T14:54:32Z">
+      <class name="com.assignment.question2.SeleniumFile">
+        <test-method status="PASS" signature="demo()[pri:0, instance:com.assignment.question2.SeleniumFile@28feb3fa]" name="demo" duration-ms="5252" started-at="2020-08-18T20:24:26Z" finished-at="2020-08-18T20:24:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- demo -->
+      </class> <!-- com.assignment.question2.SeleniumFile -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

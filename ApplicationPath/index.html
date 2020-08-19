@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0017)http://localhost/hack/to/allow/ie/testing -->
+<html>
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8" />
+    <style>
+        body {background-color: lightcyan; margin: 10px 20px;}
+        h1   {color: darkblue;}
+    </style>
+</head>
+<body>
+    <h1 id="myheader">Login</h1>
+
+    <div id="div_text">
+        <p style="display: block;">Speak, friend, and enter.</p>
+    </div>
+
+    <form id="login_form" onsubmit="login(); return false;">
+        <input name="username" type="text" id="i_textfield" value="name" style="display: none;"/>
+        <input id="i_textfield" style="display: block;" type="text" name="username" value="name"/>
+        <input name="password" type="password" value="" placeholder="password"/>
+        <p><input id="i_submit" type="submit"/></p>
+    </form>
+
+    <div id="div_text">
+        <p id="p_info"></p>
+    </div>
+
+    <script>
+        function submit(id) {
+            setTimeout(function(){ window.location.href = './testapp.html'; }, 2000)
+        }
+
+        function login() {
+            var input_name = document.getElementsByName('username')[1].value;
+            var input_pass = document.getElementsByName('password')[0].value;
+            var result = document.getElementById('p_info');
+            if (input_name == 'friend' && input_pass == 'mellon') {
+                setTimeout(function(){ result.textContent = 'Signing in user [ ' + input_name + ' ] ...'; }, 500)
+                setTimeout(function(){ window.location.href = './testapp.html'; }, 2000)
+            } else {
+                setTimeout(function(){ result.innerHTML = '<span style="color:red;">Invalid credentials!</span>'; }, 500)
+            }
+        }
+    </script>
+</body>
+</html>

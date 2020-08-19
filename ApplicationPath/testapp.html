@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0017)http://localhost/hack/to/allow/ie/testing -->
+<html>
+<head>
+    <title> Test App</title>
+    <meta charset="utf-8" />
+    <style>
+        body {background-color: lightcyan; margin: 10px 20px;}
+        h1   {color: darkblue;}
+    </style>
+</head>
+<body>
+    <h1 id="myheader"> Welcome, friend! </h1>
+
+    <div id="div_text">
+        <p>
+            <span id="p_text" style="display: none;">The home page.</span>
+        </p>
+    </div>
+
+    <div id="div_text" name="HideShow" onclick="hideshow()">
+        <p>
+            <span id="p_text" style="display: block;">
+                This is
+                <span id="p_dynamic" onclick="changeText(this)"><u>a really</u></span>
+                bug-free application!
+            </span>
+        </p>
+    </div>
+
+    <div>
+        <button id="btn_download" onclick="download()">Download</button>
+        <span>a small file, or</span>
+        <button id="btn_logout" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function logout() {
+            setTimeout(function(){ window.location.href = './index.html'; }, 400)
+        }
+
+        function download() {
+            var blob = new Blob(['0123456789abcdef'], { type: 'text/plain' });
+            if (window.navigator.msSaveOrOpenBlob) {
+                window.navigator.msSaveBlob(blob, 'download.txt');
+            }
+            else {
+                var element = window.document.createElement('a');
+                element.href = window.URL.createObjectURL(blob);
+                element.download = 'download.txt';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
+        }
+
+        function changeText(id) {
+            setTimeout(function(){ id.innerHTML = "<b>really not a</b>"; }, 200)
+        }
+ 
+        setInterval(function() {
+            location.reload();
+        }, 1000);
+    </script>
+</body>
+</html>
+
